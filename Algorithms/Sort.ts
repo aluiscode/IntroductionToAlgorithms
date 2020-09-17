@@ -17,12 +17,11 @@ export class Sort{
   }
 
   private static merge(arr: number[], start:number, middle:number, end:number):void{
-    //0 6 13
-    let n1 = middle - start; //6
-    let n2 = end - middle - 1; //7
+    let n1 = middle - start;
+    let n2 = end - middle - 1;
 
-    let left:number[] = new Array(n1 + 1); //7
-    let right: number[] = new Array(n2 + 1); //8
+    let left:number[] = new Array(n1 + 1);
+    let right: number[] = new Array(n2 + 1);
 
     for(let i=0; i<=n1; i++){
       left[i] = arr[start + i];
@@ -31,8 +30,8 @@ export class Sort{
       right[j]= arr[middle + j + 1]
     }
 
-    left[n1+1] = 9999;
-    right[n2+1] = 9999;
+    left[n1+1] = Infinity;
+    right[n2+1] = Infinity;
 
     let i:number= 0;
     let j:number= 0;
